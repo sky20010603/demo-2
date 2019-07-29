@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+  <form action="/c/sky/findtypebyid">
+  <h1 style="color:red;">[[${MSG}]]</h1>
+   <h1>体检项目查询</h1>
+   <input type="hidden" name=p value="1">
+   <input type="hidden" name=s value="3">
+   <input type="hidden" name=typeid>
+   <select name='sel'>
+     <option value="4">请选择</option>
+     <option value="1">内科检查</option>
+     <option value="2">血常规</option>
+     <option value="3">肝功能</option>
+   </select>
+   <input type="submit" value="查询">
+   <table>
+     <tr>
+       <td>项目名称</td>
+       <td>所属类别</td>
+       <td>是否必查</td>
+       <td>参考值</td>
+       <td>价格</td>
+       <td>说明</td>
+       <td>操作</td>
+     </tr>
+     <tbody>
+     </tbody>
+   </table>
+  </form>
+  <script src="/js/jquery-1.12.4.js"></script>
+  <script type="text/javascript">
+  $(function(){
+	  //alert("sss")
+  })
+  $("[name=sel]").change(function(){
+	  var zhi=$(this).val()
+	  $("[name=typeid]").val(zhi)
+	  //alert(zhi)
+  })
+  </script>
+</body>
+</html>

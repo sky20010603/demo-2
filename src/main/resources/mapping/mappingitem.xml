@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.accp.xxmis.dao.itemdao">
+  <select id="findtypebyid" resultType="itemtypes">
+    SELECT * FROM itemtypes WHERE typeid=#{typeid}
+  </select>
+  <select id="findbyid" resultType="peitems">
+    SELECT * FROM peitems WHERE itemid=#{itemid}
+  </select>
+  <select id="findtypebytypeid" resultType="peitems">
+    SELECT * FROM peitems WHERE typeid=#{typeid}
+  </select>
+    <select id="findall" resultType="itemtypes">
+    SELECT * FROM itemtypes 
+  </select>
+  <update id="update">
+    UPDATE peitems SET itemname='${peitems.itemname}',typeid='${peitems.typeid}',necessary='${peitems.necessary}',ref='${peitems.ref}',price='${peitems.price}',info='${peitems.info}' WHERE itemid='${peitems.itemid}'
+  </update>
+</mapper>    

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+  <table border="1px">
+    <h1>学生奖惩管理系统</h1>
+    <h2>欢迎你<span id="name">[[${USER}]]</span></h2>
+    <a href='/c/find?p=1&s=3' >学生列表</a><br>
+    <a th:href="@{/c/find2(name=${USER})}">奖惩管理</a><br>
+    <a href=''>退出系统</a>
+    <tbody>
+      <h1>欢迎来到学生奖惩管理系统</h1>
+    </tbody>
+  </table>
+</body>
+</html>

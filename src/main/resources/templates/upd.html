@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+  <form action="/c/sky/update">
+    <h1>项目信息维护</h1>
+       <span id="itemid">[[${van.itemid}]]</span>
+       <span id="name">[[${van.itemname}]]</span>
+       <span id="ref">[[${van.ref}]]</span>
+       <span id="price">[[${van.price}]]</span>
+       <span id="info">[[${van.info}]]</span>
+       <input type="hidden" name="itemid">
+               项目名称:<input type="text" name="itemname"><br>
+               <input type="hidden" name="typeid" value="1">
+               所属类别:   <select name='sels'>
+				     <option value="1">内科检查</option>
+				     <option value="2">血常规</option>
+				     <option value="3">肝功能</option>
+				   </select><br>
+               <input type="hidden" name="necessary" value="1">
+	      是否必查:<select name='sel'>
+	      <option value="1">是</option>
+	      <option value="2">否</option>
+	      </select><br>
+	      参考值:<input type="text" name="ref"><br>
+	      价格:<input type="text" name="price"><br>
+	      说明:<input type="text" name="info"><br>
+	      <input type="submit">
+  </form>
+  <script src="/js/jquery-1.12.4.js"></script>
+  <script type="text/javascript">
+  
+  
+  $(function(){
+	  s()
+  })
+  
+function s(){
+		 $("#itemid").css("display","none")
+		 var zhi=$("#itemid").text()
+		 $("[name=itemid]").val(zhi)
+	  
+	 $("#name").css("display","none")
+	 var zhi=$("#name").text()
+	 $("[name=itemname]").val(zhi)
+	 
+	 	 $("#ref").css("display","none")
+	 var zhi=$("#ref").text()
+	 $("[name=ref]").val(zhi)
+	 
+	 	 $("#price").css("display","none")
+	 var zhi=$("#price").text()
+	 $("[name=price]").val(zhi)
+	 
+	 	 $("#info").css("display","none")
+	 var zhi=$("#info").text()
+	 $("[name=info]").val(zhi)
+}
+	 
+
+  
+  $("[name=sel]").change(function(){
+	  var zhi=$(this).val()
+	  $("[name=necessary]").val(zhi)
+	  //alert(zhi)
+  })
+  $("[name=sels]").change(function(){
+	  var zhi=$(this).val()
+	  $("[name=typeid]").val(zhi)
+	  //alert(zhi)
+  })
+
+  </script>
+</body>
+</html>

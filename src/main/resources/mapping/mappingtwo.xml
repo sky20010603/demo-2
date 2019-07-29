@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.accp.xxmis.dao.studao">
+  <select id="find" resultType="t_student">
+    SELECT * FROM t_student
+  </select>
+  <select id="loginIn" resultType="t_student">
+    SELECT * FROM t_student WHERE code='${code}' AND name='${name}'
+  </select>
+  <select id="findbyname" resultType="t_student">
+    SELECT * FROM t_student WHERE name='${name}'
+  </select>
+  <delete id="deletebyname">
+    DELETE FROM t_student WHERE name='${name}'
+  </delete>
+</mapper>    
